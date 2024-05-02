@@ -1,42 +1,71 @@
 #root {
-  max-width: 1280px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.u-limitations-grid-layout {
+  grid-template-columns: repeat(12, 1fr);
+
+  grid-template-areas:
+    "heading . gender"
+    "line age muscle"
+    "pregnancy . race";
+
+  row-gap: 32px;
+  column-gap: 34px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-heading {
+  grid-area: heading;
+  grid-column: 1 / span 6;
+  width: 90%;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.grid-heading:after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: -122px;
+
+  width: 94px;
+  height: 122px;
+  background-image: url("src/assets/line.png");
+  background-size: contain;
 }
 
-.card {
-  padding: 2em;
+.limitation-card p::first-letter {
+  text-transform: uppercase;
 }
 
-.read-the-docs {
-  color: #888;
+.grid-gender {
+  grid-area: gender;
+  grid-column: 8 / span 4;
+}
+
+.grid-line {
+  grid-area: line;
+  grid-column: 2 / span 2;
+}
+
+.grid-age {
+  grid-area: age;
+  grid-column: 5 / span 4;
+}
+
+.grid-muscle {
+  grid-area: muscle;
+  grid-column: 9 / span 4;
+}
+
+.grid-pregnancy {
+  grid-area: pregnancy;
+  grid-column: 3 / span 4;
+}
+
+.grid-race {
+  grid-area: race;
+  grid-column: 7 / span 4;
 }
